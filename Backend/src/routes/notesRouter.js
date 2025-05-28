@@ -8,9 +8,9 @@ router.get('/', getAllNote)
 router.post('/',createNote)
 
 
-router.put(':id', updateNote)
+router.put('/:id', updateNote)
  
 
-router.delete(':id', deleteNode)
+router.delete('/:id', deleteNode)
 
 export default router
