@@ -8,7 +8,7 @@ const rateLimit = async (req , res , next)=>{
         const {success} = await ratelimit.limit("my-limit-key")
 
         if(!success){
-            res.status(429).json({message:"Too many request , please try again"})
+          return  res.status(429).json({message:"Too many request , please try again"})
         }
         next()
 
