@@ -1,17 +1,20 @@
 import express from 'express'
-import noteRoutes from './routes/notesRouter.js'
-import connectDb from "./config/db.js"
 const app = express()
 import dotenv from "dotenv"
+import cors from "cors"
+import noteRoutes from './routes/notesRouter.js'
+import connectDb from "./config/db.js"
 import rateLimit from './middleware/rateLimit.js'
 dotenv.config()
 
 
 
 // middleware
+app.use(cors({
+    origin:"http://localhost:5173"
+}))
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
-
 app.use(rateLimit)
 
 app.use('/api/notes',noteRoutes)
