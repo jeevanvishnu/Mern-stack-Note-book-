@@ -37,5 +37,24 @@ This app allows users to create, update, and delete notes with a title and descr
 
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/your-username/mern-stack-note-book.git
+https://github.com/jeevanvishnu/Mern-stack-Note-book-.git
 cd mern-stack-note-book
+
+# Backend
+cd backend
+npm install
+
+# Frontend
+cd ../frontend
+npm install
+
+MONGO_URI=your_mongodb_connection_string
+PORT=5000
+REDIS_URL=your_upstash_redis_url
+
+# In backend directory
+npm run dev
+
+# In frontend directory
+npm start
+
